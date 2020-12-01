@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Mobile Legends</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <style>
+    body{
+    background-image:url('https://cdn.hipwallpaper.com/i/5/65/i0IBna.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat
+    }
+  </style>
+  <body>
+    <div id="auth">
+        <!-- Awalan Template -->
+        <template v-if="auth===true">
+          <div class="d-flex justify-content-center mt-5">
+            <div class="card" style="width: 25rem;">
+              <div class="card-body">
+                 <center>
+                <h2 class="card-title ">Mobile Legends</h2>
+                <img src="https://image.winudf.com/v2/image1/Y29tLm1vYmlsZS5sZWdlbmRzX2ljb25fMTYwMDgzNzMzMF8wNzI/icon.png?w=170&fakeurl=1" class="rounded-circle"><br><br>
+                <p>Mobile Legends: Bang Bang adalah sebuah permainan peranti bergerak berjenis MOBA yang dikembangkan dan diterbitkan oleh Moonton. </p>
+                 <a href="https://play.google.com/store/apps/details?id=com.mobile.legends" class="btn btn-primary btn-lg active  btn-primary btn-lg btn-block" role="button" aria-pressed="true">Download</a><br>
+                 <a href="#" class="card-link " v-on:click="auth = false">Penjelasan Lengkap</a>
+                </center>
+                </div>
+            </div>
+          </div>
+        </template>
+        <!-- End of Awalan Template -->
+
+        <!-- Isi Template -->
+        <template v-else-if="auth===false">
+          <div class="d-flex justify-content-center mt-5">
+            <div class="card" style="width: 500px">
+              <div class="card-body">
+                <h3 class="card-title text-center">Wikipedia</h3>
+                <h5 class="card-subtitle mb-2 text-muted">1. Alur Permainan</h5>
+                <iframe width="450" height="200" src="https://www.youtube.com/embed/yPIc638Cpo8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>Mobile Legends: Bang Bang adalah sebuah permainan MOBA yang dirancang untuk ponsel. Kedua tim lawan berjuang untuk mencapai dan menghancurkan basis musuh sambil mempertahankan basis mereka sendiri untuk mengendalikan jalan setapak, tiga "jalur" yang dikenal sebagai "top", "middle" dan "bottom", yang menghubungkan basis-basis.<br>
+                    Di masing-masing tim, ada lima pemain yang masing-masing mengendalikan avatar, yang dikenal sebagai "hero", dari perangkat mereka sendiri. Karakter terkontrol komputer yang lebih lemah, yang disebut "minions", bertelur di basis tim dan mengikuti tiga jalur ke basis tim lawan, melawan musuh dan menara.</p>
+                <h5 class="card-subtitle mb-2 text-muted">2. Karakter</h5>
+                <p>Pada dasarnya karakter pada mobile legends dibedakan menjadi 6 role diantaranya; Marksman, Fighter, Tank, Mage, Assasin dan Support.Setiap role mempunyai spesialisasi dan kemampuan yang unik, total jumlah karakter hero saat ini Oktober 2020, baik pada server original maupun advance adalah 101 hero.<br>
+                    Moonton secara teratur berkerjasama dengan negara-negara di Asia Tenggara yang merupakan pangsa pasar mereka dengan pemain mobile legends terbanyak di dunia dengan membuat karakter baru berlatar belakang sejarah atau cerita rakyat masing-masing negara untuk meningkatkan daya tarik permainan. Karakter yang berdasarkan kerjasama tersebut yaitunya Lapu Lapu (Pilhipina), Minsitthar (terinspirasi dari Kyansittha; Myanmar), Kadita (terinspirasi dari Nyai Roro Kidul; Indonesia), dan Badang (Malaysia).</p>
+                <img src="https://1.bp.blogspot.com/-NwB-zN1nCMc/XVDoht3nA1I/AAAAAAAAEGg/0GxnkjkQr3A6jzfT5B-5tE91vbemTZjOACLcBGAs/s1600/nama-nama-hero-mobile-legend-terbaru-lengkap.jpg"><br><br>    
+                <center><a href="#" class="card-link" v-on:click="auth = true">Kembali</a></center>
+              </div>
+            </div>
+          </div>
+        </template>
+        <!-- End of Isi Template -->
+    </div>
+
+    <script type="text/javascript">
+    new Vue({
+        el: '#auth',
+        data: {
+            auth: true
+        }
+    })
+    </script>
+  </body>
+</html>
