@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Rendering</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+</head>
+<body>
+ <ul id="example-1">
+     <li v-for="item in items" :key="item.message">
+         {{ item.message }}
+     </li>
+ </ul>
+
+    <script>
+    new Vue({
+        el: '#example-1',
+        data: {
+        items: [
+            { message: 'Foo' },
+            { message: 'Bar' }
+            ]
+        }
+    })        
+    </script>    
+</body>
+</html>

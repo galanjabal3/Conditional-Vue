@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Component</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li><a href="#" @click="currentView='home'" keep-alive>Home</a></li>
+            <li><a href="#" @click="currentView='members'" keep-alive>Members</a></li>
+        </ul>
+        <component :is="currentView" class="animated" transition="custom-fade" transition-mode="out-in" keep-alive></component>
+    </div>
+
+    <template id="home-template">
+        <h1>Selamat datang</h1>
+        <h2>Di menu Home Dynamic Component</h2>
+    </template>
+
+    <template id="members-template">
+        <ul>
+            <li v-for="member in members">
+                {{ member }}
+            </li>
+        </ul>
+    </template>
+
+    <script>
+        Vue.transition('custom-fade', {
+            enterClass: 'bounceInDown',
+            enterClass: 'fadeOutUp'
+        })
+        Vue.component('home', {
+            template: '#home-template',
+        });
+        Vue.component('members', {
+            template: '#members-template',
+            data: function() {
+                return{
+                    members:[
+                        'Sekolah Dasar', 'Sekolah Menengah Pertama', 'Sekolah Menengah Keatas'
+                    ]
+                }
+            }
+        });
+
+        new Vue({
+            el: '#app',
+            data: {
+                currentView: 'home'
+            }
+        });
+    </script>
+</body>
+</html>

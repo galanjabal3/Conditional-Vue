@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-for With Range</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+</head>
+<body>
+    <ul id="displaying_filtered" class="demo">
+       <div>
+           <span v-for="n in 10">{{ n }}</span>
+       </div>
+    </ul>
+
+
+    <script>
+    new Vue({
+        el: '#displaying_filtered',
+        data: {
+      
+        }
+    })        
+
+
+    </script>    
+</body>
+</html>
